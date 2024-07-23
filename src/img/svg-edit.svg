@@ -1,0 +1,17 @@
+ <svg xmlns="http://www.w3.org/2000/svg" width="430" height="430" style={{width: "100%", height: "100%", transform: "translate3d(0,0,0)", contentVisibility: "visible"}} viewBox="0 0 430 430">
+              <defs>
+                <clipPath id="a"><path d="M0 0h430v430H0z"/></clipPath>
+                <clipPath id="e"><path d="M0 0h430v430H0z"/></clipPath><clipPath id="d"><path d="M0 0h430v430H0z"/></clipPath><clipPath id="c"><path d="M0 0h430v430H0z"/></clipPath><clipPath id="b"><path d="M0 0h430v430H0z"/></clipPath></defs><g fill="none" clip-path="url(#a)"><g clip-path="url(#b)" style={{display: "none"}}>
+                  <path className="secondary" style={{display: "none"}}/>
+                  <g style={{display: "none"}}>
+                    <path class="secondary"/><path class="primary"/></g><path class="secondary" style={{display: "none"}}/>
+                    </g>
+                    <g clip-path="url(#c)" style={{display: "block"}}><g stroke-linecap="round" stroke-linejoin="round" stroke-width="12" style={{display: "block"}}><path stroke="#07A889" d="m288.037 85.588 35.355-35.355s3.646 3.162 29.929 29.804c24.246 24.578 26.64 26.765 26.64 26.765l-35.355 35.355" class="secondary"/><path stroke="#121330" d="m96.444 277.118-27.906 84.348 84.282-27.972m-55.958-56.926s7.626 8.125 29.09 29.34c24.553 24.269 27.479 27.229 27.479 27.229l190.919-190.92s-1.845-1.54-26.646-26.645c-26.013-26.33-29.923-29.923-29.923-29.923L96.862 276.57z" class="primary"/></g>
+                    <path class="secondary" style={{display: "none"}}/><path stroke="#07A889" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M0-47.5v95" class="secondary" style={{display: "block"}} transform="rotate(45 -85.118 394.742)"/></g><g clip-path="url(#d)" style={{display: "none"}}>
+                      <path class="secondary" style={{display: "none"}}/><g style={{display: "none"}}><path class="secondary"/><path class="primary"/></g></g><g clip-path="url(#e)" style={{display: "none"}}><g style={{display: "none"}}><path class="secondary"/><path class="primary"/></g><path class="secondary" style={{display: "none"}}/><g style={{display: "none"}}><path class="secondary"/><path class="primary"/><path class="primary"/>
+              <path class="secondary"/>
+              </g>
+              <path class="secondary" style={{display: "none"}}/>
+              </g>
+              </g>
+              </svg>
