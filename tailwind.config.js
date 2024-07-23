@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'DM Serif Display', 'Montserrat', 'Playfair Display']
+      },
+    },
   },
   plugins: [],
 }
