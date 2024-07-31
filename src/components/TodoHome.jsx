@@ -174,8 +174,8 @@ function TodoHome() {
                 <input type="text" className="input task-name" value={newTasks} placeholder='Title...' onChange={e => setNewTasks(e.target.value)}/>
                 <input type="text" className="input task-desc" value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)} onKeyDown={KeyboardEnterKey} placeholder="Add Description..." name="name" />
                 <div className="add-btn" onClick={addTask}>
-                    <FaPlus className="fa-solid fa-plus" />
                     Add
+                    <FaPlus className="fa-solid fa-plus" />
                 </div>
             </div>
               <div className="task-box">
