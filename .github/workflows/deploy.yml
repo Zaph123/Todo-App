@@ -76,8 +76,7 @@ jobs:
 
       - name: Deploy to Vercel
         run: |
-          vercel deploy ./dist --prod --yes --token ${{ secrets.VERCEL_TOKEN }} \
-            --project ${{ secrets.VERCEL_PROJECT_ID }} \
-            --confirm
+          vercel deploy ./dist --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
         env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
