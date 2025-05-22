@@ -1,5 +1,4 @@
-
-name: Deploy
+name: Build and Deploy to GitHub Pages and Vercel
 
 on:
   push:
@@ -8,41 +7,41 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build Project
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
 
-      - name: Build project
+      - name: Build
         run: npm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: production-files
+          name: production-build
           path: ./dist
 
-  deploy:
-    name: Deploy
+  deploy-gh-pages:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
-          name: production-files
+          name: production-build
           path: ./dist
 
       - name: Deploy to GitHub Pages
@@ -50,3 +49,35 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+  deploy-vercel:
+    name: Deploy to Vercel
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: production-build
+          path: ./dist
+
+      - name: Deploy to Vercel
+        run: |
+          vercel deploy ./dist --prod --yes --token ${{ secrets.VERCEL_TOKEN }} \
+            --project ${{ secrets.VERCEL_PROJECT_ID }} \
+            --confirm
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
