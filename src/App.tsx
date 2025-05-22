@@ -1,10 +1,9 @@
-
 import './App.css';
-import TodoHome from './components/TodoHome';
+import TodoBoard from './components/TodoBoard';
 
  function App() {
   return (
-    <TodoHome />
+    <TodoBoard />
   )
  }
 

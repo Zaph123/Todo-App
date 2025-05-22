@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        neutral: "var(--neutral)"
+      },
       fontFamily: {
         poppins: ['Poppins', 'DM Serif Display', 'Montserrat', 'Playfair Display']
       },
